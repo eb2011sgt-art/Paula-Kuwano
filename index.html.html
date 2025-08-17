@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paula Kuwano | Perita Judicial</title>
+  <style>
+    :root{
+      --ouro:#c7a97c;
+      --preto:#000;
+      --cinza-texto:#333;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Lato',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+      margin:0; padding:0; color:var(--cinza-texto); background:#fff;
+      position:relative; overflow-x:hidden;
+    }
+
+    /* ===== Marca d’água com texto ===== */
+    body::before{
+      content:"PAULA KUWANO";
+      position:fixed;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      font-size:8rem;
+      font-weight:800;
+      color:rgba(0,0,0,0.05); /* cor cinza clara transparente */
+      white-space:nowrap;
+      z-index:0;
+      pointer-events:none;
+      user-select:none;
+    }
+
+    header{
+      background:var(--ouro);
+      color:var(--preto);
+      padding:20px;
+      text-align:center;
+      position:relative; z-index:1;
+    }
+    header h1{
+      margin:0;
+      font-size:2.4rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    nav{
+      background:#333; color:#fff;
+      text-align:center; padding:10px;
+      position:relative; z-index:1;
+    }
+    nav a{
+      color:#fff; text-decoration:none; font-weight:700; margin:0 15px;
+    }
+
+    section{
+      max-width:1000px; margin:auto; padding:40px 20px;
+      position:relative; z-index:1;
+    }
+    section h2{
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:1.8rem; color:var(--ouro);
+      margin:0 0 14px 0;
+    }
+
+    .servicos li{ margin:15px 0; }
+    .servicos strong{ display:block; margin-bottom:5px; color:#000; }
+
+    form input, form textarea{
+      width:100%; padding:10px; margin-bottom:10px;
+      border:1px solid #ccc; border-radius:6px;
+    }
+    form button{
+      background:var(--ouro); color:#fff; border:0;
+      padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:700;
+    }
+
+    .mensagem-final{
+      background:#1c1c1c; color:#f4e7cf; text-align:center;
+      padding:40px 20px; font-size:1em; line-height:1.6;
+      position:relative; z-index:1;
+    }
+    .mensagem-final em{ color:var(--ouro); }
+    .mensagem-final strong{ display:block; margin-top:10px; color:#fff; }
+
+    footer{
+      background:#333; color:#fff; text-align:center; padding:20px;
+      position:relative; z-index:1;
+    }
+
+    /* Acessibilidade */
+    a:focus{ outline:3px dashed var(--ouro); outline-offset:3px; }
+
+    /* Responsivo */
+    @media (max-width:600px){
+      header h1{font-size:1.8rem}
+      body::before{font-size:4rem;}
+    }
+
+    img{max-width:100%; height:auto;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PAULA KUWANO</h1>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Quem Sou</h2>
+    <p>Meu nome é <strong>Paula Kuwano</strong>, Perita Grafotécnica, Documental e Judicial. Atuo com análise técnica de documentos e assinaturas, elaborando laudos periciais objetivos e rigorosamente embasados, fundamentais para a formação do convencimento do juiz e a segurança jurídica das decisões.</p>
+    <ul>
+      <li>✅ Rigor científico</li>
+      <li>✅ Atualização contínua em técnicas periciais</li>
+      <li>✅ Fluência em francês, conhecimento em espanhol e italiano</li>
+    </ul>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços Periciais Oferecidos</h2>
+    <ul class="servicos">
+      <li><strong>✍️ Perícia Grafotécnica</strong> Análise da autenticidade de assinaturas e grafismos para identificação de falsificações.</li>
+      <li><strong>📄 Documentoscopia</strong> Estudo de documentos para verificar adulterações, fraudes e autenticidade.</li>
+      <li><strong>🧪 Análise Documental Técnica</strong> Avaliação detalhada de elementos técnicos e materiais em documentos.</li>
+      <li><strong>⚖️ Assistência Técnica Judicial</strong> Apoio técnico em processos judiciais para advogados e partes.</li>
+      <li><strong>📌 Contestação de Laudos</strong> Revisão crítica de laudos periciais apresentados pela parte contrária.</li>
+      <li><strong>📂 Laudos Técnicos Particulares</strong> Produção de pareceres técnicos extrajudiciais.</li>
+      <li><strong>🌐 Perícias em Idiomas Estrangeiros</strong> Laudos e análises em francês, espanhol e italiano.</li>
+    </ul>
+  </section>
+
+  <section id="diferenciais">
+    <h2>Por que escolher meus serviços?</h2>
+    <ul>
+      <li>🔍 Rigor técnico e métodos reconhecidos nacional e internacionalmente</li>
+      <li>📚 Atualização contínua em perícia judicial</li>
+      <li>🌍 Atuação multilíngue (Francês, Espanhol, Italiano)</li>
+      <li>👩‍⚖️ Suporte técnico para advogados e partes em processos judiciais</li>
+      <li>📄 Entrega de laudos objetivos, claros e jurídicos</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Comigo</h2>
+    <p>📱 WhatsApp: <a href="https://wa.me/5511978753868">(11) 97875-3868</a><br>
+       📧 E-mail: <a href="mailto:paulakuwano.pericias@gmail.com">paulakuwano.pericias@gmail.com</a></p>
+    <form>
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="text" name="whatsapp" placeholder="WhatsApp" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <textarea name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <div class="mensagem-final">
+    <p><em>"Vem aí, um novo conceito em perícia criminal"</em></p>
+    <p>
+      Perícias Criminais, Local de Crime, Toxicologia, Investigação Forense, Acidente de Trânsito,<br>
+      Grafotécnica, Documentação Fraudulenta, Cibernética Forense, Balística, Acidente de Trabalho,<br>
+      Documentoscopia, Incêndio Criminoso, Perícias em Engenharia, Perícias Contábeis,<br>
+      Homicídios e Contestação de laudos.
+    </p>
+    <strong>Contato: paulakuwano.pericias@gmail.com</strong>
+  </div>
+
+  <footer>
+    &copy; 2025 Paula Kuwano - Todos os direitos reservados
+  </footer>
+</body>
+</html>
