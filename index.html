@@ -3,12 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paula Kuwano | Perita Judicial</title>
+  <title>Paula Kuwano | Perita Grafotécnica e Documentoscopia</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Perita Grafotécnica e Documentoscopia. Laudos técnicos para segurança jurídica, assistência técnica judicial e perícia particular. Atendimento multilíngue. WhatsApp (11) 97875-3868.">
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Paula Kuwano" />
+  <link rel="canonical" href="https://eb2011sgt-art.github.io/Paula-Kuwano/"/>
+
+  <!-- Open Graph / Twitter (atualize og:image quando tiver uma imagem em https://eb2011sgt-art.github.io/Paula-Kuwano/img/og-image.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Paula Kuwano | Perita Grafotécnica e Documentoscopia">
+  <meta property="og:description" content="Laudos técnicos para segurança jurídica, assistência técnica judicial e perícia particular. Atendimento multilíngue.">
+  <meta property="og:url" content="https://eb2011sgt-art.github.io/Paula-Kuwano/">
+  <!-- <meta property="og:image" content="https://eb2011sgt-art.github.io/Paula-Kuwano/img/og-image.jpg"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paula Kuwano | Perita Grafotécnica e Documentoscopia">
+  <meta name="twitter:description" content="Laudos técnicos para segurança jurídica, assistência técnica judicial e perícia particular.">
+  <!-- <meta name="twitter:image" content="https://eb2011sgt-art.github.io/Paula-Kuwano/img/og-image.jpg"> -->
+
   <style>
     :root{
       --ouro:#c7a97c;
       --preto:#000;
       --cinza-texto:#333;
+      --ok:#1d7a2e;
+      --ok-bg:#eaf7ea;
+      --err:#842029;
+      --err-bg:#fdecea;
     }
     *{box-sizing:border-box}
     body{
@@ -16,90 +39,80 @@
       margin:0; padding:0; color:var(--cinza-texto); background:#fff;
       position:relative; overflow-x:hidden;
     }
-
-    /* ===== Marca d’água com texto ===== */
+    /* Marca d’água textual */
     body::before{
       content:"PAULA KUWANO";
-      position:fixed;
-      top:50%; left:50%;
+      position:fixed; top:50%; left:50%;
       transform:translate(-50%,-50%);
-      font-size:8rem;
-      font-weight:800;
-      color:rgba(0,0,0,0.05); /* cor cinza clara transparente */
-      white-space:nowrap;
-      z-index:0;
-      pointer-events:none;
-      user-select:none;
+      font-size:8rem; font-weight:800;
+      color:rgba(0,0,0,.05); white-space:nowrap;
+      z-index:0; pointer-events:none; user-select:none;
     }
 
+    /* TOPO STICKY + alinhado à esquerda */
     header{
-      background:var(--ouro);
-      color:var(--preto);
-      padding:20px;
-      text-align:center;
-      position:relative; z-index:1;
+      background:var(--ouro); color:var(--preto);
+      padding:16px 20px;
+      display:flex; align-items:center; justify-content:flex-start;
+      position:sticky; top:0; z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
     }
     header h1{
-      margin:0;
-      font-size:2.4rem;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
+      margin:0; font-size:2.2rem; font-weight:800;
+      letter-spacing:.04em; text-transform:uppercase;
     }
 
     nav{
-      background:#333; color:#fff;
-      text-align:center; padding:10px;
+      background:#333; color:#fff; padding:10px 20px; text-align:left;
       position:relative; z-index:1;
     }
-    nav a{
-      color:#fff; text-decoration:none; font-weight:700; margin:0 15px;
-    }
+    nav a{ color:#fff; text-decoration:none; font-weight:700; margin:0 15px 0 0; }
 
+    section[id]{ scroll-margin-top: 90px; }
     section{
       max-width:1000px; margin:auto; padding:40px 20px;
       position:relative; z-index:1;
     }
     section h2{
       font-family:'Playfair Display',Georgia,serif;
-      font-size:1.8rem; color:var(--ouro);
-      margin:0 0 14px 0;
+      font-size:1.8rem; color:var(--ouro); margin:0 0 14px 0;
     }
 
     .servicos li{ margin:15px 0; }
     .servicos strong{ display:block; margin-bottom:5px; color:#000; }
 
     form input, form textarea{
-      width:100%; padding:10px; margin-bottom:10px;
-      border:1px solid #ccc; border-radius:6px;
+      width:100%; padding:12px 14px; margin-bottom:12px;
+      border:1px solid #ccc; border-radius:8px; font-size:1rem;
     }
+    form textarea{ min-height:160px; resize:vertical; }
     form button{
       background:var(--ouro); color:#fff; border:0;
-      padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:700;
+      padding:12px 22px; border-radius:10px; cursor:pointer; font-weight:700;
+      transition:filter .2s ease;
     }
+    form button[disabled]{ filter:grayscale(40%); cursor:progress; }
 
-    .mensagem-final{
-      background:#1c1c1c; color:#f4e7cf; text-align:center;
-      padding:40px 20px; font-size:1em; line-height:1.6;
-      position:relative; z-index:1;
-    }
-    .mensagem-final em{ color:var(--ouro); }
-    .mensagem-final strong{ display:block; margin-top:10px; color:#fff; }
+    .contatos p{ margin:.4rem 0 1rem; font-size:1.05rem; }
+
+    /* Alertas */
+    .alert{ display:none; padding:12px 14px; border-radius:10px; margin:10px 0 18px; font-weight:600; }
+    .alert.show{ display:block; }
+    .alert.ok{ background:var(--ok-bg); color:var(--ok); border:1px solid #28a74533; }
+    .alert.err{ background:var(--err-bg); color:var(--err); border:1px solid #dc354533; }
 
     footer{
       background:#333; color:#fff; text-align:center; padding:20px;
       position:relative; z-index:1;
     }
 
-    /* Acessibilidade */
     a:focus{ outline:3px dashed var(--ouro); outline-offset:3px; }
 
-    /* Responsivo */
     @media (max-width:600px){
-      header h1{font-size:1.8rem}
-      body::before{font-size:4rem;}
+      header h1{font-size:1.7rem}
+      body::before{font-size:3.6rem;}
+      nav a{ display:inline-block; margin:6px 10px 0 0; }
     }
-
     img{max-width:100%; height:auto;}
   </style>
 </head>
@@ -108,7 +121,7 @@
     <h1>PAULA KUWANO</h1>
   </header>
 
-  <nav>
+  <nav aria-label="Menu principal">
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
     <a href="#diferenciais">Diferenciais</a>
@@ -151,13 +164,34 @@
 
   <section id="contato">
     <h2>Fale Comigo</h2>
-    <p>📱 WhatsApp: <a href="https://wa.me/5511978753868">(11) 97875-3868</a><br>
-       📧 E-mail: <a href="mailto:paulakuwano.pericias@gmail.com">paulakuwano.pericias@gmail.com</a></p>
-    <form>
+    <div class="contatos">
+      <p>📱 WhatsApp: <a href="https://wa.me/5511978753868">(11) 97875-3868</a><br>
+         📧 E-mail: <a href="mailto:paulakuwano.pericias@gmail.com">paulakuwano.pericias@gmail.com</a></p>
+    </div>
+
+    <!-- ALERTA SUCESSO/ERRO -->
+    <div id="alert" class="alert" role="status" aria-live="polite"></div>
+
+    <!-- FORMULÁRIO INTEGRADO (FormSubmit) -->
+    <form id="contato-form" action="https://formsubmit.co/paulakuwano.pericias@gmail.com" method="POST">
+      <!-- Campos -->
       <input type="text" name="nome" placeholder="Nome" required>
       <input type="text" name="whatsapp" placeholder="WhatsApp" required>
       <input type="email" name="email" placeholder="E-mail" required>
-      <textarea name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      <textarea name="mensagem" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+      <!-- Configurações FormSubmit -->
+      <input type="hidden" name="_subject" value="Contato do site - Paula Kuwano">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <!-- redireciona para a própria página com marcador de sucesso -->
+      <input type="hidden" name="_next" value="https://eb2011sgt-art.github.io/Paula-Kuwano/?success=1#contato">
+      <!-- Autoresposta (opcional) -->
+      <input type="hidden" name="_autoresponse" value="Olá! Recebi sua mensagem e retornarei em breve. — Paula Kuwano">
+
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
       <button type="submit">Enviar Mensagem</button>
     </form>
   </section>
@@ -176,5 +210,61 @@
   <footer>
     &copy; 2025 Paula Kuwano - Todos os direitos reservados
   </footer>
+
+  <!-- JSON-LD: dados estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Paula Kuwano",
+    "description": "Perita Grafotécnica e Documentoscopia. Laudos técnicos para segurança jurídica, assistência técnica judicial e perícia particular.",
+    "areaServed": "BR",
+    "url": "https://eb2011sgt-art.github.io/Paula-Kuwano/",
+    "email": "mailto:paulakuwano.pericias@gmail.com",
+    "telephone": "+55 11 97875-3868",
+    "serviceType": [
+      "Perícia Grafotécnica",
+      "Documentoscopia",
+      "Análise Documental Técnica",
+      "Assistência Técnica Judicial",
+      "Contestação de Laudos",
+      "Laudos Técnicos Particulares",
+      "Perícias em Idiomas Estrangeiros"
+    ],
+    "inLanguage": "pt-BR"
+  }
+  </script>
+
+  <!-- Script: estado "Enviando…" + alerta sucesso/erro -->
+  <script>
+    (function(){
+      const form = document.getElementById('contato-form');
+      const alertBox = document.getElementById('alert');
+
+      form.addEventListener('submit', function(){
+        const btn = form.querySelector('button[type="submit"]');
+        btn.dataset.text = btn.textContent;
+        btn.textContent = 'Enviando…';
+        btn.disabled = true;
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const success = params.get('success');
+      const error   = params.get('error');
+
+      if (success === '1' || success === 'true') {
+        alertBox.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
+        alertBox.className = 'alert ok show';
+      } else if (error) {
+        alertBox.innerHTML = 'Não foi possível enviar sua mensagem. Tente novamente ou envie um e-mail para <strong>paulakuwano.pericias@gmail.com</strong>.';
+        alertBox.className = 'alert err show';
+      }
+
+      if (window.history && window.history.replaceState) {
+        const clean = window.location.origin + window.location.pathname + window.location.hash;
+        window.history.replaceState({}, document.title, clean);
+      }
+    })();
+  </script>
 </body>
 </html>

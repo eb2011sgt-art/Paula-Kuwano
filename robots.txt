@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eb2011sgt-art.github.io/Paula-Kuwano/sitemap.xml
